@@ -1,0 +1,69 @@
+{
+  "lexicon": 1,
+  "id": "blue.zio.atfile.upload",
+  "defs": {
+    "main": {
+      "type": "record",
+      "description": "A reference to an uploaded blob.",
+      "key": "any",
+      "record": {
+        "type": "object",
+        "properties": {
+          "blob": {
+            "type": "blob",
+            "accept": "*/*",
+            "maxSize": 1000000000000
+          },
+          "checksum": {
+            "type": "object",
+            "properties": {
+              "algo": {
+                "type": "string"
+              },
+              "hash": {
+                "type": "string"
+              }
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "datetime"
+          },
+          "file": {
+            "type": "object",
+            "properties": {
+              "mimeType": {
+                "type": "string"
+              },
+              "modifiedAt": {
+                "type": "string",
+                "format": "datetime"
+              },
+              "name": {
+                "type": "string"
+              },
+              "size": {
+                "type": "integer"
+              }
+            }
+          },
+          "finger": {
+            "type": "union",
+            "refs": [
+              "blue.zio.atfile.finger#browser",
+              "blue.zio.atfile.finger#machine"
+            ],
+            "closed": false
+          },
+          "meta": {
+            "type": "union",
+            "refs": [
+              "blue.zio.atfile.meta#unknown"
+            ],
+            "closed": false
+          }
+        }
+      }
+    }
+  }
+}

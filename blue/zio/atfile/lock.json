@@ -1,0 +1,20 @@
+{
+    "lexicon": 1,
+    "id": "blue.zio.atfile.upload",
+    "defs": {
+      "main": {
+        "type": "record",
+        "description": "A reference to a locked file.",
+        "key": "any",
+        "record": {
+          "type": "object",
+          "properties": {
+            "lock": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+  
